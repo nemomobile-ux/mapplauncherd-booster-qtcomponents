@@ -1,11 +1,11 @@
 [Unit]
-Description=Application launch booster for Qt Components on QtQuick2
+Description=Application launch booster for NemoMobile Qt Components
 After=pre-user-session.target
 Requires=dbus.socket pre-user-session.target
 
 [Service]
 Type=notify
-ExecStart=/usr/libexec/mapplauncherd/booster-qtcomponents-qt5 --systemd
+ExecStart=/usr/libexec/mapplauncherd/booster-nemomobile --systemd
 OOMScoreAdjust=-250
 
 [Install]

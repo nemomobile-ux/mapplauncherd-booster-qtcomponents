@@ -33,7 +33,7 @@
 #include "daemon.h"
 #include <MDeclarativeCache>
 
-const string QMLBooster::m_boosterType = "qtcomponents-qt5";
+const string QMLBooster::m_boosterType = "nemomobile";
 
 const string & QMLBooster::boosterType() const
 {
