@@ -1,8 +1,0 @@
-[Unit]
-Description=Application launch booster for Qt Components
-After=xorg.target
-Requires=dbus.socket xorg.target
-
-[Service]
-Type=notify
-ExecStart=/usr/libexec/mapplauncherd/booster-qtcomponents --systemd

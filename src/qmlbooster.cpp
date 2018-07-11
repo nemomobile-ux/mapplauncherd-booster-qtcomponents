@@ -20,18 +20,12 @@
 #include <QFileInfo>
 #include <QtGlobal>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 # include <QQuickView>
 # include <QtQml>
 # define QDeclarativeView QQuickView
 # define QDeclarativeComponent QQmlComponent
 # define QDeclarativeContext QQmlContext
 # define QDeclarativeError QQmlError
-#else
-# include <QDeclarativeView>
-# include <QDeclarativeComponent>
-# include <QDeclarativeContext>
-#endif
 
 #include "qmlbooster.h"
 #include "connection.h"
@@ -39,11 +33,7 @@
 #include "daemon.h"
 #include <MDeclarativeCache>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 const string QMLBooster::m_boosterType = "qtcomponents-qt5";
-#else
-const string QMLBooster::m_boosterType = "qtcomponents";
-#endif
 
 const string & QMLBooster::boosterType() const
 {
