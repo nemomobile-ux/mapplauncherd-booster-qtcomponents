@@ -33,3 +33,7 @@ SOURCES += src/qmlbooster.cpp src/eventhandler.cpp
 HEADERS += src/qmlbooster.h src/eventhandler.h
 OTHER_FILES += qml/preload.qml
 
+DISTFILES += \
+    rpm/mapplauncherd-booster-nemomobile.spec
+
+

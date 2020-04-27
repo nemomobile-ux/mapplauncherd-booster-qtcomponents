@@ -37,8 +37,7 @@ ln -s ../booster-nemomobile.service %{buildroot}/usr/lib/systemd/user/user-sessi
 
 %files
 %defattr(-,root,root,-)
-%{_libexecdir}/mapplauncherd/booster-nemomobile
+%attr(2755, root, privileged) %{_libexecdir}/mapplauncherd/booster-nemomobile
 %{_datadir}/booster-nemomobile/*
 %{_libdir}/systemd/user/booster-nemomobile.service
 %{_libdir}/systemd/user/user-session.target.wants/booster-nemomobile.service
-

@@ -1,11 +1,13 @@
 [Unit]
 Description=Application launch booster for NemoMobile Qt Components
-After=pre-user-session.target
+After=lipstick.service
 Requires=dbus.socket pre-user-session.target
 
 [Service]
-Type=notify
-ExecStart=/usr/libexec/mapplauncherd/booster-nemomobile --systemd
+Type=forking
+PIDFile=%t/mapplauncherd/nemomobile.pid
+ExecStart=/usr/bin/invoker --type=nemomobile-session /usr/libexec/mapplauncherd/booster-nemomobile --daemon
+Restart=always
 OOMScoreAdjust=-250
 
 [Install]
