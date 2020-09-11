@@ -12,6 +12,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Concurrent)
 BuildRequires:  mapplauncherd-devel >= 4.1.0
 BuildRequires:  pkgconfig(qdeclarative5-boostable)
+BuildRequires:  systemd
 Requires:  qt-components-qt5
 Requires:  qt5-qtquickcontrols-nemo
 Requires:  mapplauncherd >= 4.1.0
@@ -32,12 +33,12 @@ make %{?jobs:-j%jobs}
 rm -rf %{buildroot}
 %qmake5_install
 
-mkdir -p %{buildroot}%{_libdir}/systemd/user/user-session.target.wants/
-ln -s ../booster-nemomobile.service %{buildroot}/usr/lib/systemd/user/user-session.target.wants/
+mkdir -p %{buildroot}%{_userunitdir}/user-session.target.wants/
+ln -s ../booster-nemomobile.service %{buildroot}%{_userunitdir}user-session.target.wants/
 
 %files
 %defattr(-,root,root,-)
 %attr(2755, root, privileged) %{_libexecdir}/mapplauncherd/booster-nemomobile
 %{_datadir}/booster-nemomobile/*
-%{_libdir}/systemd/user/booster-nemomobile.service
-%{_libdir}/systemd/user/user-session.target.wants/booster-nemomobile.service
+%{_userunitdir}/booster-nemomobile.service
+%{_userunitdir}/user-session.target.wants/booster-nemomobile.service
