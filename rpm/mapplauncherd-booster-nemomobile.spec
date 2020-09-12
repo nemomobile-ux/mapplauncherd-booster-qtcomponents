@@ -34,7 +34,7 @@ rm -rf %{buildroot}
 %qmake5_install
 
 mkdir -p %{buildroot}%{_userunitdir}/user-session.target.wants/
-ln -s ../booster-nemomobile.service %{buildroot}%{_userunitdir}user-session.target.wants/
+ln -s ../booster-nemomobile.service %{buildroot}%{_userunitdir}/user-session.target.wants/
 
 %files
 %defattr(-,root,root,-)
