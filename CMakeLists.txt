@@ -50,6 +50,8 @@ target_link_libraries(booster-nemomobile PUBLIC
 )
 
 set_property(TARGET booster-nemomobile PROPERTY POSITION_INDEPENDENT_CODE TRUE)
+set_property(TARGET booster-nemomobile PROPERTY CXX_VISIBILITY_PRESET hidden)
+set_property(TARGET booster-nemomobile PROPERTY VISIBILITY_INLINES_HIDDEN ON)
 
 
 install(TARGETS booster-nemomobile RUNTIME
