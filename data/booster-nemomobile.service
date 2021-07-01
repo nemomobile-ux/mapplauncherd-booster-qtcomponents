@@ -1,7 +1,7 @@
 [Unit]
 Description=Application launch booster for NemoMobile Qt Components
 After=lipstick.service
-Requires=dbus.socket pre-user-session.target
+Requires=dbus.socket graphical-session-pre.target
 
 [Service]
 Type=forking
@@ -11,4 +11,4 @@ Restart=always
 OOMScoreAdjust=-250
 
 [Install]
-WantedBy=user-session.target
+WantedBy=graphical-session.target
